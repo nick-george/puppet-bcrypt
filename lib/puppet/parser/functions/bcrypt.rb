@@ -6,6 +6,7 @@ module Puppet::Parser::Functions
     end
 
     require 'bcrypt'
+    BCrypt::Engine.cost = 12
     BCrypt::Password.create(plaintext[0]).to_s
   end
 end
